@@ -2,7 +2,7 @@ const canvas = document.querySelector("canvas");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 const ctx = canvas.getContext("2d");
-const maxMainHeight = window.innerHeight * 0.85;
+const maxMainHeight = window.innerHeight * 1;
 const maxTtlBranches = 20000;
 
 class Branch {

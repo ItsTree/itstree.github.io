@@ -3,18 +3,22 @@
 <head>
     <title>Andrew Langtry</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+	
 </head>
 
 <body>
-    <h1><a href="http://andrewlangtry.com">andrewlangtry.com</a></h1>
+    <div class="center">
+     
+        <nav>
+            <a href="weblog.html">Weblog</a> |
+			<a href="apod.html">NASA</a>
+        </nav>
+    </div>
+
     <canvas></canvas>
 </body>
 
+
 <script type="text/javascript" src="index.js"></script>
-<script type="text/javascript">
-    const currentHour = new Date().getHours();
-    if (currentHour <= 7 || currentHour >= 18) {
-        document.body.classList.add("dark");
-    }
 </script>
 </html>

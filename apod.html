@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>NASA APOD – Andrew Langtry</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://db.onlinewebfonts.com/c/d6937131c6edab154ecdacabb7e028b1?family=Bodoni+Poster+Compressed" rel="stylesheet">   
+</head>
+
+<body>
+    <div class="center">
+
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+
+        <main class="apod-page">
+            <img id="apod-image" src="" alt="NASA Astronomy Picture of the Day">
+        </main>
+    </div>
+
+    <script>
+        const API_KEY = 'DEMO_KEY'; // replace with your NASA API key
+        const URL = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`;
+
+        fetch(URL)
+            .then(response => response.json())
+            .then(data => {
+                if(data.media_type === 'image') {
+                    document.getElementById('apod-image').src = data.url;
+                } else {
+                    document.querySelector('main').innerHTML = '<p style="color:var(--color);">Today\'s APOD is not an image.</p>';
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                document.querySelector('main').innerHTML = '<p style="color:var(--color);">Failed to load APOD.</p>';
+            });
+    </script>
+</body>
+</html>
